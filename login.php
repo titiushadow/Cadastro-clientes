@@ -9,10 +9,13 @@
             header('Location: ../../../Crud/index.php');
             exit(); 
         } else {
-            echo "Email ou Senha invalido! Tente novamente.";
+            echo "<div id='error-message' style='text-align: center; color: red; font-size: 18px;'>";
+            echo "Email ou Senha inválido! Tente novamente.";
+            echo "</div>";
         }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +52,13 @@
             </form>
         </div>
     </div>
+
+    <script>
+        setTimeout(function(){
+            var errorMessage = document.getElementById('error-message');
+            errorMessage.style.display = 'none';
+        }, 3000); // 3000 milissegundos = 3 segundos
+    </script>
 </body>
 </html>
 
